@@ -26,6 +26,7 @@
 // For if ‘n’ is divisible by any number ‘i’ 
 // then it will also be divisible by its quotient of n/i
 // eg. n=12, i=3 -> (n % i == 0), so 12/3 is also factor  
+// 2. optimal ? O(sqrt(N)) : O(1)
 #include<bits/stdc++.h>
 using namespace std;
 

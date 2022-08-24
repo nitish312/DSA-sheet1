@@ -1,35 +1,39 @@
+// 1. brute ? O(N) : O(N) for numString
 #include<iostream>
 using namespace std;
 
-int sumOfDigits(string str){
+int sumNumbers(string str){
 
 	int sum = 0, n = str.size();
 
-	string tempString = "";
+	string numString = "";
 
 	for(int i=0; i<n; i++){
 
 		if(str[i] >= '0' && str[i] <= '9'){
 
-			tempString += str[i];
+			numString += str[i];
 		}
 		else{
 
-			sum += atoi(tempString.c_str());
-			tempString = "";
+			if(numString == "") continue;
+
+			sum += stoi(numString);
+			numString = "";
 		}
 	}
 
-	return sum + atoi(tempString.c_str());
+	return sum;
 }
 
 int main(){
 
-	string str = "123xyz23ab4";
+	string str = "123xy3m124jd2";
 
-	int numSum = sumOfDigits(str);
+	cout<<str<<endl;
 
-	cout<<"Sum = "<<numSum;
+	int sum = sumNumbers(str);
+	cout<<"Sum = "<<sum;
 
 	return 0;
 }
