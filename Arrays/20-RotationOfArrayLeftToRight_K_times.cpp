@@ -1,3 +1,4 @@
+// clockwise approach ? O(N) : O(1)
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -13,7 +14,7 @@ void printVec(vector<int> nums){
 
 void reverseIt(vector<int>& nums, int start, int end){
         
-        while(start <= end) swap(nums[start++], nums[end--]);
+        while(start < end) swap(nums[start++], nums[end--]);
 }
     
 void rotate(vector<int>& nums, int k){
@@ -24,9 +25,9 @@ void rotate(vector<int>& nums, int k){
         
         int start = 0, end = n - 1;
         
-        reverseIt(nums, start, end - k);
-        reverseIt(nums, n - k, end);
-        reverseIt(nums, start, end);
+        reverseIt(nums, start, end - k); // O(N/2)
+        reverseIt(nums, n - k, end); // O(N/2)
+        reverseIt(nums, start, end); // O(N)
 }
 
 int main(){

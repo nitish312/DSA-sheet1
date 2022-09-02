@@ -45,9 +45,7 @@ void printArray(int arr[], int n){
 
 int calcSum(int arr[], int n){
 
-    int sum = 0;
-
-    sum = accumulate(arr, arr + n, sum);
+    int sum = accumulate(arr, arr + n, 0);
 
     return sum;
 }

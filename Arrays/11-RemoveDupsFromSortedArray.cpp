@@ -1,3 +1,5 @@
+check out sht2 solution
+
 // // using hashset ? O(NlogN) + O(N) -> O(NlogN) : O(N)
 // // logN to insert one elem into set
 // #include<bits/stdc++.h>
@@ -48,7 +50,7 @@ void printVec(vector<int> vec, int n){
     cout<<endl;
 }
 
-int removeDuplicate(vector<int> &vec, int n){
+int removeDuplicate(vector<int> &vec, int n){ 
 
     int i=0;
 

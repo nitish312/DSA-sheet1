@@ -112,7 +112,7 @@ void secondSmallAndLarge(int nums[], int n){
     cout << "Second Smallest = " << secondSmall << endl;
     cout << "Second Largest = " << secondLarge << endl;
 }
-// only in one go -> O(N)
+// only in one pass -> O(N)
 int main(){
 
     int n = 8;

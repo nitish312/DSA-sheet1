@@ -60,6 +60,13 @@
 //     return 0;
 // }
 
+/*
+
+For Anti-clockwise - O(N) - Block Swap Algo
+For Clockwise - O(N) - 3 reversals (see q.20)
+
+*/
+
 
 // Block Swap Algo. ? O(N) : O(1)
 // default -> (anti-clockwise rotations)
