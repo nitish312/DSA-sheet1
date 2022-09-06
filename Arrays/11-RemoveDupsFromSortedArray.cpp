@@ -1,87 +1,67 @@
-check out sht2 solution
+// solution from sht2-day7
 
-// // using hashset ? O(NlogN) + O(N) -> O(NlogN) : O(N)
-// // logN to insert one elem into set
-// #include<bits/stdc++.h>
-// using namespace std;
-
-// void printVec(vector<int> vec, int n){
-
-//     for(int i=0; i<n; i++) cout<<vec[i]<<" ";
-//     cout<<endl;
-// }
-
-// void removeDuplicate(vector<int> &vec, int n){
-
-//     set<int> uniqEle;
-//     //unordered_set<int> uniqEle;
-
-//     for(auto a: vec) uniqEle.insert(a);
-
-//     for(auto ele: uniqEle) cout<<ele<<" ";
-// }
-
-// int main(){
-
-//     vector<int> vec = {1, 2, 2, 3, 4, 4};
-//     // {1,3,0,0,2,0,3,0}; {10,20,30,40,50,60,70,80}
-//     // {65,23,7,43,123,657,45,12}; 
-
-//     int n = vec.size();
-
-//     printVec(vec, n);
-
-//     removeDuplicate(vec, n);
-
-//     // printVec(vec, n);
-
-//     return 0;
-// }
-
-
-
-// // two pointers ? O(N) : O(1)
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<set>
 using namespace std;
 
-void printVec(vector<int> vec, int n){
+void printVec(vector<int> nums){
 
-    for(int i=0; i<n; i++) cout<<vec[i]<<" ";
+    for(auto i: nums) cout<<i<<" ";
     cout<<endl;
 }
 
-int removeDuplicate(vector<int> &vec, int n){ 
+// 1. hashSet ? O(N*logN) + O(st) : O(N)
+int removeDuplicates(vector<int>& nums){
+        
+    set<int> st;
+    
+    for(auto i: nums) st.insert(i); // O(logN) for 1 insert
+    
+    int n = st.size();
+    
+    int j = 0;
+    for(auto i: st){
+        
+        nums[j++] = i;
+    }
 
-    int i=0;
+    // return j;
 
-    for(int j=1; j<n; j++){
+    printVec(nums);
+    
+    return n;
+}
 
-        if(vec[j] != vec[i]){
 
-            // vec[++i] = vec[j];
-            i++;
-            vec[i] = vec[j];
+
+// 2. Two-pointer ? O(N) : O(1)
+int removeDuplicates(vector<int>& nums){
+        
+    int n = nums.size();
+
+    int start = 1;
+
+    for(int i=1; i<n; i++){
+
+        if(nums[i] != nums[i-1]){
+
+            nums[start++] = nums[i];
         }
     }
-    
-    return i + 1; // i+1 elems in updated arr
+
+    printVec(nums);
+
+    return start;
 }
 
 int main(){
 
-    vector<int> vec = {1, 2, 2, 3, 4, 4};
-    // {1,3,0,0,2,0,3,0}; {10,20,30,40,50,60,70,80}
-    // {65,23,7,43,123,657,45,12}; 
+    vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
 
-    int n = vec.size();
+    printVec(nums);
 
-    printVec(vec, n);
-
-    // k = n - dups 
-    int k = removeDuplicate(vec, n);
-    for(int i=0; i<k; i++) cout<<vec[i]<<" ";
-
-    // printVec(vec, n);
+    cout<<removeDuplicates(nums);   
 
     return 0;
 }

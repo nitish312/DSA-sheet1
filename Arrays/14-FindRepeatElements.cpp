@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// using new array ? O(N^2) + O(N) = O(N^2) : O(N)
+// using new array ? O(N^2) + O(N) -> O(N^2) : O(N)
 void repeatingElements(int arr[], int n){
 
     int dup[n];
@@ -24,9 +24,11 @@ void repeatingElements(int arr[], int n){
             cout<<dup[i]<<" ";
     } 
     cout<<endl;
+
+    
 }
 
-// using map ? O(N) ? O(N)
+// HashMap ? O(N) ? O(N)
 void repeatingElements(int arr[], int n){
 
     unordered_map<int, int> m;

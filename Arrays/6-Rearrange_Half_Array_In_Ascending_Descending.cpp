@@ -1,4 +1,3 @@
-// sort func ? O(NlogN) + O(N/2) -> O(NlogN) : O(1)
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -10,6 +9,8 @@ void printArray(int arr[], int n){
     cout<<endl;
 }
 
+// 1. sort & reverse from mid to end 
+// ? O(N*log(N)) + O(N/4) -> O(N*log(N)) : O(1)
 void halfReverse(int arr[], int start, int end){
 
     while(start < end){
