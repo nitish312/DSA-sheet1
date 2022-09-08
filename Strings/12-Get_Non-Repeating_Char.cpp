@@ -1,43 +1,28 @@
-// // 1. map ? O(N) + O(N) -> O(N) : O(N)
-// #include<iostream>
-// #include<unordered_map>
-// using namespace std;
+#include<iostream>
+#include<unordered_map>
+using namespace std;
 
-// void nonRepeatingChar(string str){
+// 1. HashMap ? O(N) + O(N) -> O(N) : O(N)
+void nonRepeatingChar(string str){
 
-// 	int n = str.size();
+	int n = str.size();
 
-// 	unordered_map<char, int> charFreq;
+	unordered_map<char, int> charFreq;
 
-// 	for(int i=0; i<n; i++){
+	for(int i=0; i<n; i++) charFreq[str[i]]++;
 
-// 		charFreq[str[i]]++;
-// 	}
+	for(auto i: charFreq){
 
-// 	for(auto i: charFreq){
+		if(i.second == 1){
 
-// 		if(i.second == 1){
+			cout<<i.first<<endl;
+		}
+	}
+}
 
-// 			cout<<i.first<<endl;
-// 		}
-// 	}
-// }
-
-// int main(){
-
-// 	string str = "successful";
-
-// 	nonRepeatingChar(str);
-
-// 	return 0;
-// }
 
 
 // 2. sorting ? O(N*logN) + O(N) -> O(N*logN) : O(1)
-#include<iostream>
-#include<algorithm>
-using namespace std;
-
 void nonRepeatingChar(string str){
 
 	int n = str.size();

@@ -7,6 +7,7 @@ void printArr(int arr[], int n){
     cout<<endl;
 }
 
+// 1. set&unordermap ? O(N*log(N)) + O(N) + O(N) -> O(N*log(N)) : O(2N) -> O(N)
 void arrayRankTransform(int arr[], int n) {
         
     set<int> st;

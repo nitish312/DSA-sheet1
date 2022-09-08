@@ -3,50 +3,60 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printVec(vector<int> vec, int n){
+void printVec(vector<int> vec){
 
-    for(int i=0; i<n; i++) cout<<vec[i]<<" ";
+    for(auto ele: vec) cout<<ele<<" ";
     cout<<endl;
 }
 
-// Block Swap Algo. ? O(N) : O(1)
-// default -> (anti-clockwise rotations)
-#include<bits/stdc++.h>
-using namespace std;
+void swapSubArray(vector<int>& vec, int start, int end, int k){
 
-void printVec(int arr[], int n){
+    int temp;
+    for(int i=0; i<k; i++){
 
-    for(int i=0; i<n; i++) cout<<arr[i]<<" ";
-    cout<<endl;
+        temp = vec[i + start];
+        vec[i + start] = vec[i + end];
+        vec[i + end] = temp;
+    }
 }
 
-double getMedian(vector<int>& vec, int n){
+void blockSwapAlgo(vector<int>& vec, int n, int k){
 
-	sort(vec.begin(), vec.end());
+    if(k == 0 || k == n) return;
 
-	if(n % 2 == 0){
+    int i = k, j = n - k;
+    while(i != j){
 
-		int m1 = n/2, m2 = n/2 - 1;
-		double mean = (double)(vec[m1] + vec[m2]) / 2;
-		return mean;
-	}
-	else{
+        if(i < j){
 
-		return vec[n/2];
-	}
+            swapSubArray(vec, k-i, k-i+j, i);
+            j -= i;
+        }
+        else{
+
+            swapSubArray(vec, k-i, k, j);
+            i -= j;
+        }
+    }
+
+    swapSubArray(vec, k-i, k, i);
 }
 
 int main(){
 
-    vector<int> vec = {1, 2, 3, 4};
+    vector<int> vec = {10,20,30,40,50,60,70,80};
     // {1,3,0,0,2,0,3,0}; {10,20,30,40,50,60,70,80}
     // {65,23,7,43,123,657,45,12}; 
 
+    printVec(vec);
+
     int n = vec.size();
 
-    printVec(vec, n);
+    int k = 2;
 
-    cout<<"Median = "<<getMedian(vec, n);
+    blockSwapAlgo(vec, n, k);
+
+    printVec(vec);
 
     return 0;
 }

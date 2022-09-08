@@ -1,7 +1,7 @@
-// 1. push_back() ? O(N) : O(1)
 #include<iostream>
 using namespace std;
 
+// 1. brute - push_back() ? O(N) : O(1)
 string removeCharExceptAlphabets(string str){
 
 	string ans;

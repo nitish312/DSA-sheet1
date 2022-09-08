@@ -1,7 +1,7 @@
-// 1. brute ? O(N) : O(1)
 #include<iostream>
 using namespace std;
 
+// 1. in-built - toupper() ? O(N) : O(1)
 string capitalizeFirstNLastChar(string str){
 
 	int n = str.size();

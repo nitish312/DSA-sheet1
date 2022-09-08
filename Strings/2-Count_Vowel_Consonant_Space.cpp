@@ -1,7 +1,7 @@
-// 2. brute ? O(N) : O(1)
 #include<iostream>
 using namespace std;
 
+// count all using if-else ladder ? O(N) : O(1)
 void countEverything(string str){
 
 	int vowels = 0, consonants = 0, digits = 0, spaces = 0, special_symbols = 0;
@@ -15,7 +15,7 @@ void countEverything(string str){
 
 			vowels++;
 		}
-		else if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')){
+		else if((str[i] > 'a' && str[i] <= 'z') || (str[i] > 'A' && str[i] <= 'Z')){
 
 			consonants++;
 		}

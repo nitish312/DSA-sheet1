@@ -6,11 +6,13 @@ int main(){
 
 	char ch = 'a';
 
-	cout<<"Char to ASCII value = "<<ch<<" = "<<(int) ch;
+	cout<<"Char to ASCII value = "<<ch<<" = "<< (int)ch;
+	// cout<<"Char to ASCII value = "<<ch<<" = "<<int(ch);
 
 	int value = 65;
 
-	cout<<endl<<"ASCII value to Char = "<<(char) value;
+	cout<<endl<<"ASCII value to Char = "<< (char)value;
+	// cout<<endl<<"ASCII value to Char = "<<char(value);
 
 	return 0;
 }

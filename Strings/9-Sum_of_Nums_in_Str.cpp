@@ -1,7 +1,7 @@
-// 1. brute ? O(N) : O(N) for numString
 #include<iostream>
 using namespace std;
 
+// 1. brute - get nums into string, sum += stoi(string) ? O(N) : O(N) for numString
 int sumNumbers(string str){
 
 	int sum = 0, n = str.size();
@@ -12,7 +12,8 @@ int sumNumbers(string str){
 
 		if(str[i] >= '0' && str[i] <= '9'){
 
-			numString += str[i];
+			// numString += str[i];
+			numString.push_back(str[i]);
 		}
 		else{
 

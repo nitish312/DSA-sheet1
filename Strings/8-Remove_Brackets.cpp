@@ -1,7 +1,7 @@
-// 1. brute ? O(N) : O(1)
 #include<iostream>
 using namespace std;
 
+// 1. if-continue ? O(N) : O(1)
 string removeBrackets(string str){
 
 	int n = str.size();
@@ -10,7 +10,9 @@ string removeBrackets(string str){
 
 	for(int i=0; i<n; i++){
 
-		if(str[i] == '(' || str[i] == ')' || str[i] == '[' || str[i] == ']' || str[i] == '{' || str[i] == '}'){
+		if(str[i] == '(' || str[i] == ')' || 
+		   str[i] == '[' || str[i] == ']' || 
+		   str[i] == '{' || str[i] == '}'){
 
 			continue;
 		}

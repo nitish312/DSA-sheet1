@@ -10,6 +10,7 @@ void printArray(int arr[], int n){
     cout<<endl;
 }
 
+// 2. HashMap & vecOfPair ? O(N*log(N)) : O(2N)
 bool sortEle(pair<int, int> a, pair<int, int> b){
 
     // if(a.second == b.second)
@@ -28,11 +29,17 @@ void sortByFrequency(int arr[], int n){
     for(auto a: mp) ele_freq.push_back(a);
     
     sort(ele_freq.begin(), ele_freq.end(), sortEle);
-        
+
+    int end = n-1;
     for(auto a : ele_freq){
             
-        while(a.second--) cout<<a.first<<" ";
+        while(a.second--){
+
+            arr[end--] = a.first;
+        } 
     }
+
+    printArray(arr, n);
 }
 
 int main(){

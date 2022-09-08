@@ -1,37 +1,27 @@
-// // brute force ? O(N^2) : O(1)
-// #include<bits/stdc++.h>
-// using namespace std;
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+using namespace std;
 
-// int main(){
+// brute force ? O(N^2) : O(1)
+void printSymmetricPairs(vector<vector<int>> arr){
 
-//     int n = 5;
-    
-//     vector<vector<int>> arr = {{1, 2}, {2, 1}, {3, 4}, {4, 5}, {5, 4}};
+    for(int i=0; i<n; i++){
 
-//     for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
 
-//         for(int j=i+1; j<n; j++){
+            if(arr[j][0] == arr[i][1] && arr[j][1] == arr[i][0]){
 
-//             if(arr[j][0] == arr[i][1] && arr[j][1] == arr[i][0]){
+                cout<<"("<<arr[i][1]<<" "<<arr[i][0]<<")"<<endl;
+            }
+        }
+    }
+}
 
-//                 cout<<"("<<arr[i][1]<<" "<<arr[i][0]<<")"<<endl;
-//             }
-//         }
-//     }
-
-//     return 0;
-// }
 
 
 // using map ? O(N) : O(N)
-#include<bits/stdc++.h>
-using namespace std;
-
-int main(){
-
-    int n = 5;
-    
-    vector<vector<int>> arr = {{1, 2}, {2, 1}, {3, 4}, {4, 5}, {5, 4}};
+void printSymmetricPairs(vector<vector<int>> arr){
 
     unordered_map<int, int> mp;
 
@@ -49,6 +39,15 @@ int main(){
             mp[first] = second;
         }
     }
+}
+
+int main(){
+
+    int n = 5;
+    
+    vector<vector<int>> arr = {{1, 2}, {2, 1}, {3, 4}, {4, 5}, {5, 4}};
+
+    printSymmetricPairs(arr);
 
     return 0;
 }

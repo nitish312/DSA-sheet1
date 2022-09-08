@@ -15,12 +15,12 @@
 (Q3) Second Smallest and Second Largest element in an array
 	 1. sort & get elems
 	 	? O(N*log(N)) : O(1)
-	 2. iterate using two loops -> in two pass
+	 2. iterate using two separate loops -> in two pass
 	 	loop1 for smallest,largest, loop2 for second-small,second-large
 	 	? O(N) + O(N) -> O(N) : O(1)
 	 3. iterate using single loops -> in one pass
 	 	loop for smallest,largest, second-small,second-large
-	 	? O(N) + O(N) -> O(N) : O(1)	
+	 	? O(N) : O(1)	
 
 
 (Q4) Reverse a given array
@@ -110,10 +110,35 @@
 
 
 (Q16) Find all symmetric pairs in array
+	 1. double for, i0-n, ji+1-n, if(a[j][0]=a[i][1]&a[i][0]=a[j][1]) print
+	 	? O(N^2) : O(1)
+	 2. HashMap - if(mp.find(second) != mp.end() && mp[second] == first)
+	 	? O(N) : O(N)
+
+
 (Q17) Maximum product subarray in an array
+	 1. brute - three loops - 1:i0ton-1,2:jiton-1,3:kitoj
+	 	? O(N^3) : O(1)
+	 2. better - two loops - 1:i0ton-1,2:jiton-1
+	 	? O(N^2) : O(1)
+	 3. Kadane`s Algo 
+	 	? O(N) : O(1) 
+
+
 (Q18) Replace each element of the array by its rank in the array
+	 1. HashSet & unorderedMap 
+	 	? O(N*log(N)) + O(N) + O(N) -> O(N*log(N)) : O(2N) -> O(N)
+
 (Q19) Sorting elements of an array by frequency
+	 1. 
+	 2. 
+
+
 (Q20) Rotation of elements of array- left and right
+	 1. 
+	 2. 
+
+
 (Q21) Finding equilibrium index of an array
 (Q22) Finding Circular rotation of an array by K positions
 (Q23) Sort an array according to the order defined by another array
