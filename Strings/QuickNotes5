@@ -75,25 +75,51 @@
 
 
 (Q13) Check if two strings are anagram of each other
-	 1. 
-	 2. 
+	 1. HashMap - ++ chars of 1st string & -- chars of 2nd string, if(any value != 0) return false
+	 	? O(N) + O(N) + O(N) -> O(N) : O(N)
+	 2. sort & check each char
+	 	? O(N*log(N)) + O(N*log(N)) + O(N) -> O(N*log(N)) : O(1) 
+	 3. int arr of 26 nums, 1st str ++, 2nd --, loop 0-26, if arr[i]!=0, return false
+	 	? O(N) : O(1)
 
 
 (Q14) Count common sub-sequence in two strings
-	 1. 
-	 2. 
+	 1. DP soln
 
 
 (Q15) Check if two strings match where one string contains wildcard characters
+	 Skipped
+
+
+(Q16) Return maximum occurring character in the input string
+	 1. HashMap 
+	 	? O(N) : O(N)
+	 2. sort
+	 	? O(N*log(N)) + O(N) -> O(N*log(N)) : O(N)
+	 3. charArray 
+	 	? O(N) : O(256) -> O(1)
+
+
+(Q17) Remove all duplicates from the input string.
 	 1. 
 	 2. 
 
 
-(Q16) Return maximum occurring character in the input string
-(Q17) Remove all duplicates from the input string.
 (Q18) Print all the duplicates in the input string.
+	 1. 
+	 2. 
+
+
 (Q19) Remove characters from first string present in the second string
+	 1. 
+	 2. 
+
+
 (Q20) Change every letter with the next lexicographic alphabet in the given string
+	 1. 
+	 2. 
+
+
 (Q21) Write a program to find the largest word in a given string.
 (Q22) Write a program to sort characters in a string
 (Q23) Count number of words in a given string

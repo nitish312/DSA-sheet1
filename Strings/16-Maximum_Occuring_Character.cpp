@@ -1,60 +1,67 @@
-// // 1. map ? O(N) : O(N)
-// #include<iostream>
-// #include<unordered_map>
-// using namespace std;
-
-// char getMaxOccuringChar(string str){
-
-// 	int n = str.size();
-
-// 	unordered_map<char, int> charFreq;
-
-// 	for(int i=0; i<n; i++) charFreq[str[i]]++;
-
-// 	int maxCount = 0;
-// 	for(auto i: charFreq)
-// 		if(i.second > maxCount) 
-// 			maxCount = i.second;
-	
-// 	for(auto i: charFreq)
-// 		if(i.second == maxCount) 
-// 			cout<< i.first<<maxCount<<endl;
-
-// 	return 'Z';
-// }
-
-// int main(){
-
-// 	string str = "the beast";
-
-// 	char maxOccuring = getMaxOccuringChar(str);
-
-// 	cout<<maxOccuring;
-
-// 	return 0;
-// }
-
-
-// 2. optimal ? O(N) : O(26) -> O(1)
 #include<iostream>
 using namespace std;
 
-char getMaxOccuringChar(string str){
+// 1. HashMap ? O(N) : O(N)
+char getMaxOccuringChar(string str)
+{
+    unordered_map<char, int> freqCount;
+    int n = str.size();
+    int maxi = 0;
+    char ans;
+    for(int i=0; i<n; i++)
+    {
+        freqCount[str[i]]++;
+        if(freqCount[str[i]] > maxi)
+        {
+            maxi = freqCount[str[i]];
+            ans = str[i];
+        }
+    }
+    return ans;
+}
 
-	int n = str.size();
 
-	char ans;
-    int maxfreq = 0;
 
-    int count[256] = {0};
+// 2. sort ? O(N*log(N)) + O(N) -> O(N*log(N)) : O(1)
+char getMaxOccuringChar(string str)
+{
+    sort(str.begin(), str.end());
+    int maxi = 0;
+    char ans;
+    int n = str.size();
+    for(int i=0; i<n-1; i++)
+    {
+        int count = 1;
+        if(str[i] == str[i+1]) count++;
+        if(count > maxi)
+        {
+            maxi = count;
+            ans = str[i];
+        }
+    }
+    return ans;
+}
+
+
+
+// 3. count array ? O(N) : O(1)
+char getMaxOccuringChar(string str)
+{
+    int n = str.size();
+
+    char ans;
+    int maxi = 0;
+
+    int count[256] = {0}; 
+    // follow-up -> try using count[26]s
 
     for(int i=0; i<n; i++){
 
         count[str[i]]++;
 
-        if(count[str[i]] > maxfreq){
+        if(count[str[i]] > maxi){
 
-            maxfreq = count[str[i]];
+            maxi = count[str[i]];
             ans = str[i];
         }
     }
