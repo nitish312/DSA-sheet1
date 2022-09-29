@@ -60,7 +60,7 @@
 	 2. Block Swap Algorithm for anti-clockwise only
 	 	? O(N) : O(1)
 // For Anti-clockwise ? O(N) -> Block Swap Algo
-// For Clockwise ? O(N) -> 3 reversals (see sht2 q.20)
+// For Clockwise ? O(N) -> 3 reversals (see sht1 q.20)
 
 
 (Q9) Average of all elements in an array
@@ -129,18 +129,41 @@
 	 1. HashSet & unorderedMap 
 	 	? O(N*log(N)) + O(N) + O(N) -> O(N*log(N)) : O(2N) -> O(N)
 
+
 (Q19) Sorting elements of an array by frequency
-	 1. 
-	 2. 
+	 1. Nested loop n visitetd array 
+	 	? O(N+N^2) -> O(N^2) : O(N)
+	 2. HashMap 
+	 	? O(N) : O(N)
 
 
 (Q20) Rotation of elements of array- left and right
-	 1. 
-	 2. 
+	 1. Brute 
+	 	? O(N*K) : O(1)
+	 2. k mod n and 3 reversals (clock-wise)
+	 	? O(N) : O(1)
 
 
 (Q21) Finding equilibrium index of an array
+	 1. brute ? O(N^2) : O(1)
+	 2. pre-computation ? O(N) : O(N)
+
+
 (Q22) Finding Circular rotation of an array by K positions
+	    same quesition as sht-1-Q20
+
+
 (Q23) Sort an array according to the order defined by another array
+	 1. brute - Nested loop ? O(N^2) + O(N*logN) : O(N+M)
+	 2. HashMap ? O(N*logN) + O(logM) + O(N) -> O(N*logN) : O(N+M)
+
+
 (Q24) Search an element in an array
+	 1. Linear Search ? O(N) : O(1)
+	 2. Binary Search ? O(logN) : O(1)
+
+
 (Q25) Check if Array is a subset of another array or not
+	 1. Linear Search ? O(M*N) : O(1)
+	 2. Binary Search ? O(M*logN) : O(1)
+	 3. HashSet ? O(N+M) : O(N)

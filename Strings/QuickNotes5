@@ -101,13 +101,14 @@
 
 
 (Q17) Remove all duplicates from the input string.
-	 1. 
-	 2. 
+	 1. monotonic stk 
+	 	? O(N+N+N) -> O(N) : O(26+26+N) -> O(N)
 
 
 (Q18) Print all the duplicates in the input string.
 	 1. 
 	 2. 
+	 3. 
 
 
 (Q19) Remove characters from first string present in the second string

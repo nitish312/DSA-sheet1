@@ -1,16 +1,42 @@
 #include<iostream>
 using namespace std;
 
-double areaOfCircle(int r){
-
-	return 3.14 * r * r;
+int getLength(int n)
+{
+    int count = 0;
+    while(n)
+    {
+        count++;
+        n /= 10;
+    }
+    return count;
 }
 
-int main(){
+bool isArmstrong(int n)
+{
+    int len = getLength(n);
+    int num = n, sum = 0;
+    while(num)
+    {
+        int lastDigit = num % 10;
+        int digit = 1;
+        for(int i=0; i<len; i++)
+        {
+        	digit *= lastDigit;
+        }
+        sum += digit;
+        num /= 10;
+    }
+    
+    return sum == n;
+}
 
-	int radius = 4;
-
-	cout<<"Area of square = "<<areaOfCircle(radius);
-
-	return 0;
+int main()
+{
+    int n = 371;
+    if(isArmstrong(n))
+        cout<<n<<"is armstrong no.";
+    else
+        cout<<n<<"is not armstrong no.";
+    return 0;
 }

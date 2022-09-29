@@ -9,33 +9,31 @@ void printVec(vector<int> nums){
     cout<<endl;
 }
 
-// binary search ? O(log(N)) : O(1)
-int binarySearch(vector<int> nums, int ele){
+// 1. linear search ? O(N) : O(1)
+int linearSearch(vector<int> nums, int ele)
+{
+    int n = nums.size();
+    for(int i=0; i<n; i++)
+        if(nums[i] == ele) 
+            return i;
 
+    return -1;
+}
+
+
+
+// 2. binary search ? O(logN) : O(1)
+int binarySearch(vector<int> nums, int ele)
+{
     int  n = nums.size();
-
     int start = 0, end = n - 1, mid;
-    while(start <= end){
-
+    while(start <= end)
+    {
         mid = start + (end - start) / 2;
         if(nums[mid] == ele) return mid;
         else if(nums[mid] < ele) start = mid + 1;
         else if(nums[mid] > ele) end = mid - 1;
     }
-
-    return -1;
-}
-
-// linear search ? O(N) : O(1)
-int linearSearch(vector<int> nums, int ele){
-
-    int n = nums.size();
-
-    for(int i=0; i<n; i++){
-
-        if(nums[i] == ele) return i;
-    }
-
     return -1;
 }
 
