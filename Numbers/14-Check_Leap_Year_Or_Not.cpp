@@ -9,33 +9,32 @@
 	//3. if n is divisible by 400, its leap, otherwise its not leap year
 
 
-// logic ? O(1) : O(1)
+// 1. logic ? O(1) : O(1)
 #include<bits/stdc++.h>
 using namespace std;
 
-bool checkLeap(int n){
-
-	// if(n % 4 == 0 && n % 100 != 0 || n % 400 == 0) return true;
-	// else return false;
-
-	if(n % 4 == 0){
-
-		if(n % 100 == 0){
-
+bool checkLeap(int n)
+{
+	if(n % 4 == 0)
+	{
+		if(n % 100 == 0)
+		{
 			if(n % 400 == 0) return true;
 			else return false;
 		}
 		else return true;
 	}
 	else return false;
+
+	// return (n % 4 == 0 && n % 100 != 0 || n % 400 == 0);
 }
 
 int main(){
 
 	int year = 2400;
 
-	if(checkLeap(year)) cout<<"Yes, it is";
-	else cout<<"No, its not";
+	if(checkLeap(year)) cout<<"Yes, its a Leap Year";
+	else cout<<"No, its not a Leap year";
 
 	return 0;
 }

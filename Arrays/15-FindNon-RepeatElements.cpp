@@ -4,13 +4,13 @@ using namespace std;
 // brute force ? O(N^2) : O(1)
 void nonRepeatingElements(int arr[], int n){
 
-    for(int i=0; i<n; i++){
-
+    for(int i=0; i<n; i++)
+    {
         bool check = false;
-        for(int j=0; j<n; j++){
-
-            if(i != j && arr[j] == arr[i]){
-
+        for(int j=0; j<n; j++)
+        {
+            if(i != j && arr[j] == arr[i])
+            {
                 check = true;
                 break;
             }
@@ -19,7 +19,7 @@ void nonRepeatingElements(int arr[], int n){
     }
 }
 
-// using sort ? O(N^2) : O(1)
+// using sort ? O(N*logN) + O(N) : O(1)
 void nonRepeatingElements(int arr[], int n){
 
     sort(arr, arr+n);

@@ -1,42 +1,30 @@
 #include<iostream>
 using namespace std;
 
-int getLength(int n)
-{
-    int count = 0;
-    while(n)
-    {
-        count++;
-        n /= 10;
-    }
-    return count;
-}
+// Intuition : when we see the factors of any number, 
+// they always lie in pairs. 
+// For if ‘n’ is divisible by any number ‘i’ 
+// then it will also be divisible by its quotient of n/i
+// eg. n=12, i=3 -> (n % i == 0), so 12/3 is also factor  
 
-bool isArmstrong(int n)
+// 2. till sqrt ? O(sqrt(N)) : O(1)
+void factorsOfN(int n)
 {
-    int len = getLength(n);
-    int num = n, sum = 0;
-    while(num)
-    {
-        int lastDigit = num % 10;
-        int digit = 1;
-        for(int i=0; i<len; i++)
-        {
-        	digit *= lastDigit;
-        }
-        sum += digit;
-        num /= 10;
-    }
-    
-    return sum == n;
+	for(int i=1; i*i<=n; i++) 
+	{
+		if(n % i == 0)
+		{
+			if(n / i == i) cout<<i<<" ";
+			else cout<<i<<" "<<n/i<<" ";
+		}
+	}
 }
 
 int main()
 {
-    int n = 371;
-    if(isArmstrong(n))
-        cout<<n<<"is armstrong no.";
-    else
-        cout<<n<<"is not armstrong no.";
-    return 0;
+	int n = 24;
+
+	factorsOfN(n);
+
+	return 0;
 }

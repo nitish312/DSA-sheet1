@@ -25,10 +25,10 @@
 
 (Q4) Reverse a given array
 	 1. stack - push all elems into stack and pop all
-	 	? O(N) + O(N) -> O(N) : O(N)
+	 	? O(2N) -> O(N) : O(N)
 	 2. by creating another array - 
 	 	store array by iterating from end into another array & replace it with new array
-	 	? O(N) + O(N) -> O(N) : O(N)
+	 	? O(2N) -> O(N) : O(N)
 	 2. in-built func - reverse()
 	 	? O(N) : O(1)
 	 3. Two-pointer & swaps
@@ -48,7 +48,7 @@
 
 
 (Q7) Calculate sum of the elements of the array
-	 1. by iterating 
+	 1. by traversing n summing up all elems  
 	 	? O(N) : O(1)
 	 2. in-built - accumulate()
 	 	? O(N) : O(1)
@@ -74,15 +74,15 @@
 
 
 (Q11) Remove duplicates from a sorted array
-	 1. HashSet - insert all into set, iterate set and put back into array using ind++=0
-	 	? O(N*log(N)) + O(st) : O(N)
+	 1. HashSet (set) - insert all into set, iterate set and put back into array using ind++=0
+	 	? O(N*log(N)) + O(st) -> O(N*logN) : O(N)
 	 2. Two-pointer - start=1, iterate, if(nums of ind!=ind-1) nums[start++] = nums[ind] 
 	 	? O(N) : O(1)
 
 
 (Q12) Remove duplicates from unsorted array
-	 1. HashSet 
-	 	? O(N) : O(N)
+	 1. HashSet (unordered_set)
+	 	? O(N) + O(st) -> O(N) : O(N)
 	 2. Two-pointer - sort & two-pointer
 	 	? O(N*log(N)) + O(N) -> O(N*log(N)) : O(1)
 
@@ -92,36 +92,32 @@
 
 
 (Q14) Find all repeating elements in an array
-	 1. creating new array - nArr[n], start=0, if(a[j]=a[i]) nArr[start++]=a[i]
-	 	? O(N^2) + O(N) -> O(N^2) : O(N)
-	 2. two loops with visited array 
-	 	? O(N) + O(N*N) -> O(N^2) : O(N) 
-	 3. HashMap
+	 1. creating new array, visited array, two loops  // neglected
+	 	? O(N) + O(N*N) + O(N) -> O(N^2) : O(N) 
+	 2. HashMap
 	 	? O(N) : O(N)
 
 
 (Q15) Find all non-repeating elements in an array
-	 1. brute - two loops, bool check
-	 	? O(N^2) : O(1)
+	 1. brute - two loops, bool check, visited arr
+	 	? O(N^2) : O(N)
 	 2. sort
-	 	? O(N*log(N)) : O(1)
+	 	? O(N*log(N)) + O(N) -> O(N*logN) : O(1)
 	 3. HashMap
 	 	? O(N) : O(N)
 
 
 (Q16) Find all symmetric pairs in array
-	 1. double for, i0-n, ji+1-n, if(a[j][0]=a[i][1]&a[i][0]=a[j][1]) print
+	 1. double for, i=0-n, j=i+1-n, if(a[j][0]=a[i][1]&a[i][0]=a[j][1]) print
 	 	? O(N^2) : O(1)
-	 2. HashMap - if(mp.find(second) != mp.end() && mp[second] == first)
+	 2. HashMap - if(mp.find(second) != mp.end() && mp[second] == first) found else mp[first]=second
 	 	? O(N) : O(N)
 
 
 (Q17) Maximum product subarray in an array
-	 1. brute - three loops - 1:i0ton-1,2:jiton-1,3:kitoj
-	 	? O(N^3) : O(1)
-	 2. better - two loops - 1:i0ton-1,2:jiton-1
+	 1. better - two loops - pair for indices - 1:i0ton-1,2:jiton-1
 	 	? O(N^2) : O(1)
-	 3. Kadane`s Algo 
+	 2. Kadane`s Algo 
 	 	? O(N) : O(1) 
 
 
@@ -147,6 +143,7 @@
 (Q21) Finding equilibrium index of an array
 	 1. brute ? O(N^2) : O(1)
 	 2. pre-computation ? O(N) : O(N)
+	 3. two sum variables ? O(N) : O(1)
 
 
 (Q22) Finding Circular rotation of an array by K positions

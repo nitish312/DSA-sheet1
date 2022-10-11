@@ -53,7 +53,7 @@ void rotate(vector<int>& nums, int k){
     int start = 0, end = n - 1;
     
     reverseIt(nums, start, end - k); // O(N/2)
-    reverseIt(nums, n - k, end); // O(N/2)
+    reverseIt(nums, end - k + 1, end); // O(N/2)
     reverseIt(nums, start, end); // O(N)
 }
 

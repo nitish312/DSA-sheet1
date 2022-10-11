@@ -1,32 +1,24 @@
-// iterative ? O(d log N) : O(1)
-// d is total no. of elems in range
-#include<bits/stdc++.h>
+// 1. loop n palin ? O(range*logN) : O(1)
+#include<iostream>
 using namespace std;
 
-bool checkPalindrome(int n){
-
-    int temp = n, rev = 0;
-    while(temp){
-
-        int lastDigit = temp % 10;
+bool isPalindrome(int n)
+{
+    int num = n, rev = 0;
+    while(num)
+    {
+        int lastDigit = num % 10;
         rev = rev * 10 + lastDigit;
-        temp /= 10;
+        num /= 10;
     }
-
-    if(rev == n) return true;
-
-    return false;
+    return (rev == n);
 }
 
-void printPalindromesInRange(int mini, int maxi){
-
-    for(int i=mini; i<=maxi; i++){
-
-        if(checkPalindrome(i)){
-
+void printPalindromesInRange(int mini, int maxi)
+{
+    for(int i=mini; i<=maxi; i++)
+        if(isPalindrome(i)) 
             cout<<i<<" ";
-        }
-    }
 }
 
 int main(){

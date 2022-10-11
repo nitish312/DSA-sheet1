@@ -1,43 +1,27 @@
-// // if-else ? O(1) : O(1)
-// #include<bits/stdc++.h>
-// using namespace std;
-
-// int greatestOfThree(int num1, int num2, int num3){
-
-// 	if(num1 > num2 && num1 > num3) return num1;
-// 	else if(num2 > num3) return num2;
-// 	else return num3;
-// }
-
-// int main(){
-
-// 	auto num1 = 44;
-// 	auto num2 = 62;
-// 	auto num3 = 34;
-
-// 	cout<<greatestOfThree(num1, num2, num3);
-
-// 	return 0;
-// }
-
-
-
-// inbuilt function ? O(1) : O(1)
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
-int greatestOfThree(int num1, int num2, int num3){
+// 1. if-else ? O(1) : O(1)
+double greatest(double a, double b, double c)
+{
+    if(a > b && a > c) return a;
+    else if(b > c) return b;
+    else return c;
+}
 
-	return max(num1, max(num2, num3));
+// 2. built-in max func ? O(1) : O(1)
+double greatest(double a, double b, double c)
+{
+    return max(a, max(b, c));
 }
 
 int main(){
 
-	auto num1 = 44;
-	auto num2 = 62;
-	auto num3 = 34;
+    double num1 = 21.73;
+    double num2 = 3.1235;
+    double num3 = 2.125;
 
-	cout<<greatestOfThree(num1, num2, num3);
+    cout<<"Greater num = "<<greatest(num1, num2, num3);
 
-	return 0;
+    return 0;
 }

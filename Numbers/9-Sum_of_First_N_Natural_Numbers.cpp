@@ -1,31 +1,27 @@
-// // iterative ? O(N) : O(1)
-// #include<bits/stdc++.h>
-// using namespace std;
-
-// int main(){
-
-// 	int n = 10, sum = 1;
-
-// 	for(int i=2; i<=n; i++) 
-// 		sum += i;
-
-// 	cout<<sum;
-
-// 	return 0;
-// }
-
-
-// by formula ? O(1) : O(1)
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
+
+// 1. loop ? O(N) : O(1)
+int sumOfFirstN(int n)
+{
+	int sum = 1;
+	for(int i=2; i<=n; i++) sum += i;
+	return sum;
+}
+
+
+
+// 2. formula ? O(1) : O(1)
+int sumOfFirstN(int n)
+{
+	return (n * (n + 1) / 2);
+}
 
 int main(){
 
 	int n = 10;
 
-	int sum = n * (n+1) / 2; 
-
-	cout<<sum;
+	cout<<sumOfFirstN(n);
 
 	return 0;
 }

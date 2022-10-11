@@ -12,6 +12,17 @@ int getGCD(int n1, int n2){
 	return 0;
 }
 
+
+// Recursive 
+int getGCD(int l, int b)
+{
+    if(l == 0) return b;
+    if(b == 0) return l;
+    if(l == b) return l;
+    
+    return (l > b) ? getGCD(l-b, b) : getGCD(l, b-l);
+}
+
 int main(){
 
 	int n1 = 4, n2 = 8;

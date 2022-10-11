@@ -2,30 +2,28 @@
 using namespace std;
 
 // using new array ? O(N^2) + O(N) -> O(N^2) : O(N)
-void repeatingElements(int arr[], int n){
+void repeatingElements(int arr[], int n)
+{
+    int dup[n], start = 0;
+    bool visited[n] = {false};
 
-    int dup[n];
-    int start = 0;
+    for(int i=0; i<n-1; i++)
+    {
+        if(visited[i]) continue;
 
-    for(int i=0; i<n-1; i++){
-
-        for(int j=i+1; j<n; j++){
-
-            if(arr[j] == arr[i]){
-
-                dup[start++] = arr[i];
+        for(int j=i+1; j<n; j++)
+        {
+            if(arr[j] == arr[i]) 
+            {
+                if(dup[start-1] != arr[j]) 
+                    dup[start++] = arr[i];
             }
         }
+        visited[i] = true;
     }
 
-    for(int i=0; i<start; i++){
-        
-        if(dup[i] != dup[i+1])
-            cout<<dup[i]<<" ";
-    } 
-    cout<<endl;
-
-    
+    for(int i=0; i<start; i++) 
+        cout<<dup[i]<<" ";
 }
 
 // HashMap ? O(N) ? O(N)
@@ -46,9 +44,9 @@ void repeatingElements(int arr[], int n){
 
 int main(){
 
-    int n = 14;
+    int n = 16;
 
-    int arr[n] = {2, 4, 3, 5, 5, 8, 6, 1, 7, 9, 3, 5, 4, 7};
+    int arr[n] = {2, 4, 3, 5, 5, 5, 5, 8, 6, 1, 7, 9, 3, 5, 4, 7};
 
     for(auto a: arr) cout<<a<<" ";
     cout<<endl;

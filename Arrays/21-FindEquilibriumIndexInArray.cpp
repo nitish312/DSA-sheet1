@@ -53,6 +53,22 @@ int getEquilibriumIndex(vector<int> nums){
     return -1;
 }
 
+
+
+// 3. Two sum variables ? O(N) : O(1) 
+int getEquilibriumIndex(vector<int> nums)
+{
+    int sum1 = accumulate(nums.begin(), nums.end(), 0);
+    int sum2 = 0;
+    for(int i=0; i<nums.size(); i++)
+    {
+        sum1 -= nums[i];
+        if(sum1 == sum2) return i;
+        sum2 += nums[i];
+    }
+    return -1;
+}
+
 int main()
 {
     vector<int> nums = {2, 3, -1, 8, 4};
