@@ -1,18 +1,18 @@
 #include<iostream>
 using namespace std;
 
-// 1. brute - push_back() ? O(N) : O(1)
-string removeCharExceptAlphabets(string str){
-
+// 1. new str - push_back() ? O(N) : O(N)
+string removeCharExceptAlphabets(string str)
+{
 	string ans;
 
 	int n = str.size();
 
-	for(int i=0; i<str.size(); i++){
-
+	for(int i=0; i<str.size(); i++)
+	{
 		if((str[i] >= 'a' && str[i] <= 'z') || 
-		   (str[i] >= 'A' && str[i] <= 'Z')){
-
+		   (str[i] >= 'A' && str[i] <= 'Z'))
+		{
 			ans.push_back(str[i]);
 		}
 	}

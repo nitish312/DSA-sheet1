@@ -2,12 +2,11 @@
 using namespace std;
 
 // 1. in-built - toupper() ? O(N) : O(1)
-string capitalizeFirstNLastChar(string str){
-
+string capitalizeFirstNLastChar(string str)
+{
 	int n = str.size();
-
-	for(int i=0; i<n; i++){
-
+	for(int i=0; i<n; i++)
+	{
 		if(i == 0 || i == n-1){
 
 			str[i] = toupper(str[i]);
@@ -18,7 +17,6 @@ string capitalizeFirstNLastChar(string str){
 			str[i+1] = toupper(str[i+1]);
 		}
 	}
-
 	return str;
 }
 

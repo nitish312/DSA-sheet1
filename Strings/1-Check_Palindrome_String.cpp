@@ -2,16 +2,16 @@
 #include<stack>
 using namespace std;
 
-// // 1. Using Stack ? O(N) + O(N) -> O(N) : O(N)
-bool isPalindrome(string str){
-
+// 1. Stack ? O(N) + O(N) -> O(2N) : O(N)
+bool isPalindrome(string str)
+{
 	stack<char> stk;
 
 	for(auto ch: str) stk.push(ch);
 
 	int i = 0;
-	while(!stk.empty()){
-
+	while(!stk.empty())
+	{
 		char ch = stk.top();
 		stk.pop();
 
@@ -24,8 +24,8 @@ bool isPalindrome(string str){
 
 
 // 2. built-in function ? O(N) : O(1)
-bool isPalindrome(string str){
-
+bool isPalindrome(string str)
+{
 	string s2 = str;
 
 	reverse(s2.begin(), s2.end());
@@ -36,13 +36,12 @@ bool isPalindrome(string str){
 
 
 // 3. Two pointer ? O(N/2) : O(1)
-bool isPalindrome(string str){
-
+bool isPalindrome(string str)
+{
 	int start = 0, end = str.size() - 1;
-	while(start < end){
-
-		if(str[start++] != str[end--]) return false;
-	}
+	while(start < end)
+		if(str[start++] != str[end--]) 
+			return false;
 
 	return true;
 }
