@@ -6,7 +6,6 @@
 	 3. Two-pointer 
 	 	? O(N/2) : O(1)
 	 
-
 (Q2) Count number of vowels, consonants, spaces in String
 	 1. Count all using if-else ladder
 	 	? O(N) : O(1)
@@ -16,7 +15,6 @@
 	 1. by type-casting
 	 	? O(1) : O(1) 
 	 
-
 (Q4) Remove all vowels from the string
 	 1. new str - skipping vowels - continue 
 	 	? O(N) : O(N) 
